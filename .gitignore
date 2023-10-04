@@ -1,0 +1,56 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*$py.class
+
+# Ignore the virtual environment folder
+venv/
+env/
+
+# Ignore database files
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+
+# Ignore sensitive data configuration
+*.env
+
+# Ignore media and static files
+media/
+static/
+
+# Ignore generated migration files
+*/migrations/
+
+# Ignore IDE-specific files and folders
+.vscode/
+*.code-workspace
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore pipenv virtual environment
+Pipfile.lock
+
+# Ignore coverage reports
+htmlcov/
+
+# Ignore cache files
+__pycache__/
+.cache/
+.caches/
+
+# Ignore test database
+test_db.sqlite3
+
+# Ignore system and backup files
+.DS_Store
+Thumbs.db
