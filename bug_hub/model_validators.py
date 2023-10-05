@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from .models import Bug
+from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 
 
 def validate_description_not_empty(value):
@@ -12,7 +12,7 @@ def validate_description_not_empty(value):
 
 def validate_bug_type(value):
     """Ensure that the bug_type field value is one of the predefined choices"""
-    choices = [choice[0] for choice in Bug.BUG_TYPE_CHOICES]
+    choices = [choice[0] for choice in BUG_TYPE_CHOICES]
     if value not in choices:
         error_message = "Invalid bug type."
         raise ValidationError(error_message)
@@ -27,7 +27,7 @@ def validate_report_date_not_future(value):
 
 def validate_status(value):
     """Ensure that the status field value is one of the predefined choices"""
-    choices = [choice[0] for choice in Bug.STATUS_CHOICES]
+    choices = [choice[0] for choice in STATUS_CHOICES]
     if value not in choices:
         error_message = "Invalid status."
         raise ValidationError(error_message)

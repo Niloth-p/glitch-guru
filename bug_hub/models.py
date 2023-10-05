@@ -9,6 +9,7 @@ from .model_validators import (
     validate_report_date_not_future,
     validate_status,
 )
+from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 
 
 # Create your models here.
@@ -34,12 +35,6 @@ class Bug(models.Model):
         validators=[validate_description_not_empty],
     )
 
-    BUG_TYPE_CHOICES = [
-        ("error", "Error"),
-        ("feature", "Feature Request"),
-        ("enhancement", "Enhancement"),
-        ("documentation", "Documentation"),
-    ]
     bug_type = models.CharField(
         max_length=20,
         choices=BUG_TYPE_CHOICES,
@@ -55,13 +50,6 @@ class Bug(models.Model):
         validators=[validate_report_date_not_future],
     )
 
-    STATUS_CHOICES = [
-        ("todo", "To Do"),
-        ("in_progress", "In Progress"),
-        ("under_review", "Under Review"),
-        ("done", "Done"),
-        ("wont_fix", "Won't Fix"),
-    ]
     status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
