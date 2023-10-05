@@ -3,6 +3,12 @@ Database models for storing bug information and related data
 """
 
 from django.db import models
+from .model_validators import (
+    validate_bug_type,
+    validate_description_not_empty,
+    validate_report_date_not_future,
+    validate_status,
+)
 
 
 # Create your models here.
@@ -15,13 +21,17 @@ class Bug(models.Model):
 
     Attributes:
         description (TextField): A detailed description of the bug.
-        bug_type (CharField): The type of bug, such as error, feature request, etc.
+        bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
         report_date (DateTimeField): The date when the bug was reported.
-        status (CharField): The current status of the bug (e.g., To Do, In Progress, Done).
+        status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
     description = models.TextField(
-        blank=False, null=False, max_length=500, verbose_name="Bug Description"
+        blank=False,
+        null=False,
+        max_length=500,
+        verbose_name="Bug Description",
+        validators=[validate_description_not_empty],
     )
 
     BUG_TYPE_CHOICES = [
@@ -36,10 +46,13 @@ class Bug(models.Model):
         blank=False,
         null=False,
         verbose_name="Bug Type",
+        validators=[validate_bug_type],
     )
 
     report_date = models.DateTimeField(
-        auto_now_add=True, verbose_name="Date of Reporting Bug"
+        auto_now_add=True,
+        verbose_name="Date of Reporting Bug",
+        validators=[validate_report_date_not_future],
     )
 
     STATUS_CHOICES = [
@@ -56,6 +69,7 @@ class Bug(models.Model):
         null=False,
         default="todo",
         verbose_name="Bug Status",
+        validators=[validate_status],
     )
 
     def __str__(self):
