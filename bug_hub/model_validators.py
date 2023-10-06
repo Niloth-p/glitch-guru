@@ -31,3 +31,9 @@ def validate_status(value):
     if value not in choices:
         error_message = "Invalid status."
         raise ValidationError(error_message)
+
+
+def validate_min_length(value):
+    """Ensure that the title field value is at least 10 characters long"""
+    if len(value) < 10:
+        raise ValidationError("Title must be at least 10 characters long.")

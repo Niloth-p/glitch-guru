@@ -3,16 +3,16 @@ Database models for storing bug information and related data
 """
 
 from django.db import models
+from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 from .model_validators import (
     validate_bug_type,
     validate_description_not_empty,
     validate_report_date_not_future,
     validate_status,
+    validate_min_length,
 )
-from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 
 
-# Create your models here.
 class Bug(models.Model):
     """
     Model for storing bug details in a database.
@@ -21,16 +21,23 @@ class Bug(models.Model):
     type, reporting date, and status.
 
     Attributes:
+        title (CharField): Name the bug
         description (TextField): A detailed description of the bug.
         bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
         report_date (DateTimeField): The date when the bug was reported.
         status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
+    title = models.CharField(
+        max_length=250,
+        unique=True,
+        verbose_name="Bug Title",
+        validators=[validate_min_length],
+    )
+
     description = models.TextField(
         blank=False,
         null=False,
-        max_length=500,
         verbose_name="Bug Description",
         validators=[validate_description_not_empty],
     )
