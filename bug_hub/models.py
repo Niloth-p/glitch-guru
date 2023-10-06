@@ -24,7 +24,7 @@ class Bug(models.Model):
         title (CharField): Name of the bug
         description (TextField): A detailed description of the bug.
         bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
-        report_date (DateTimeField): The date when the bug was reported first.
+        report_date (DateTimeField): The date when the bug was reported. User cannot set it. Only auto-generated.
         status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
@@ -57,7 +57,7 @@ class Bug(models.Model):
     report_date = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Report Date",
-        help_text="Date when the bug was reported first. Default: current date",
+        help_text="Date when the bug was reported",
         validators=[validate_report_date_not_future],
     )
 
@@ -73,7 +73,7 @@ class Bug(models.Model):
     )
 
     def __str__(self):
-        return str(self.description)[:50]
+        return str(self.title)
 
     class Meta:
         """

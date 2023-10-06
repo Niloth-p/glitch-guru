@@ -12,4 +12,4 @@ class BugAdmin(admin.ModelAdmin):
     Django admin configuration for the Bug model
     """
 
-    list_display = ("description", "bug_type", "report_date", "status")
+    list_display = ("title", "bug_type", "report_date", "status")
