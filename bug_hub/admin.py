@@ -13,3 +13,4 @@ class BugAdmin(admin.ModelAdmin):
     """
 
     list_display = ("title", "bug_type", "report_date", "status")
+    fields = ("bug_type", "title", "description", "status")

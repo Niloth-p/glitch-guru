@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>Bug Detail</h1>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ bug.title }}</h5>
+      <p class="card-text"><strong>Type:</strong> {{ bug.bug_type }}</p>
+      <p class="card-text">{{ bug.description }}</p>
+      <p class="card-text">
+        <strong>Created Date:</strong> {{ bug.report_date }}
+      </p>
+      <p class="card-text"><strong>Status:</strong> {{ bug.status }}</p>
+    </div>
+  </div>
+  <br />
+  <a href="{% url 'bug_hub:bug_list' %}" class="btn btn-primary"
+    >Back to Bug List</a
+  >
+</div>
+{% endblock %}
