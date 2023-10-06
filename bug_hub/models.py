@@ -21,10 +21,10 @@ class Bug(models.Model):
     type, reporting date, and status.
 
     Attributes:
-        title (CharField): Name the bug
+        title (CharField): Name of the bug
         description (TextField): A detailed description of the bug.
         bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
-        report_date (DateTimeField): The date when the bug was reported.
+        report_date (DateTimeField): The date when the bug was reported first.
         status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
@@ -32,6 +32,7 @@ class Bug(models.Model):
         max_length=250,
         unique=True,
         verbose_name="Bug Title",
+        help_text="Enter a concise title for the bug report.",
         validators=[validate_min_length],
     )
 
@@ -39,6 +40,7 @@ class Bug(models.Model):
         blank=False,
         null=False,
         verbose_name="Bug Description",
+        help_text="Provide a detailed description of the bug, including steps to reproduce.",
         validators=[validate_description_not_empty],
     )
 
@@ -48,12 +50,14 @@ class Bug(models.Model):
         blank=False,
         null=False,
         verbose_name="Bug Type",
+        help_text="Select the type of the bug",
         validators=[validate_bug_type],
     )
 
     report_date = models.DateTimeField(
         auto_now_add=True,
-        verbose_name="Date of Reporting Bug",
+        verbose_name="Report Date",
+        help_text="Date when the bug was reported first. Default: current date",
         validators=[validate_report_date_not_future],
     )
 
@@ -64,6 +68,7 @@ class Bug(models.Model):
         null=False,
         default="todo",
         verbose_name="Bug Status",
+        help_text="Indicate the current status of bug resolution",
         validators=[validate_status],
     )
 
