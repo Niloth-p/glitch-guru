@@ -37,8 +37,6 @@ class Bug(models.Model):
     )
 
     description = models.TextField(
-        blank=False,
-        null=False,
         verbose_name="Bug Description",
         help_text="Provide a detailed description of the bug, including steps to reproduce.",
         validators=[validate_description_not_empty],
