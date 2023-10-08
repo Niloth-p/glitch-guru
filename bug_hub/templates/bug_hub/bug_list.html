@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
   <h1>Bug Hub</h1>
+  <a href="{% url 'bug_hub:bug_create' %}" class="btn btn-primary mb-3"
+    >Create New Bug Report</a
+  >
   <table class="table table-striped">
     <thead>
       <tr>

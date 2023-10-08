@@ -6,4 +6,5 @@ app_name = "bug_hub"
 urlpatterns = [
     path("", views.BugListView.as_view(), name="bug_list"),
     path("<int:pk>/", views.BugDetailView.as_view(), name="bug_detail"),
+    path("createBug/", views.BugCreateView.as_view(), name="bug_create"),
 ]
