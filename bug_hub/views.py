@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView, CreateView
 from bug_hub.models import Bug
-from django.urls import reverse
+from django.urls import reverse_lazy
 from .forms import BugCreationForm
 
 
@@ -22,7 +22,7 @@ class BugCreateView(CreateView):
     model = Bug
     form_class = BugCreationForm
     template_name = "bug_hub/bug_create.html"
-    success_url = "/bugs/"
+    success_url = reverse_lazy("bug_hub:bug_list")
 
     def form_valid(self, form):
         form.instance.reported_by = self.request.user
