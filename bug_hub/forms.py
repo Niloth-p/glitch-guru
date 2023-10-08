@@ -21,6 +21,7 @@ class BugCreationForm(forms.ModelForm):
 
     description = forms.CharField(
         label=_("Description"),
+        required=False,
         widget=forms.Textarea(attrs={"class": "form-control", "rows": 4}),
         help_text=_("Enter a detailed description of the bug."),
     )
