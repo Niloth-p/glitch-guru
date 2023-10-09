@@ -21,24 +21,36 @@ class BugModelTestCase(TestCase):
         """
         Test if a bug instance can be created correctly.
         """
-        self.assertEqual(self.sample_bug.title, "Sample Bug")
         self.assertEqual(
-            self.sample_bug.description, "This is a sample bug description."
+            self.sample_bug.title, "Sample Bug", "Bug creation failed: title mismatch."
         )
-        self.assertEqual(self.sample_bug.bug_type, "error")
-        self.assertEqual(self.sample_bug.status, "todo")
+        self.assertEqual(
+            self.sample_bug.description,
+            "This is a sample bug description.",
+            "Bug creation failed: description mismatch.",
+        )
+        self.assertEqual(
+            self.sample_bug.bug_type, "error", "Bug creation failed: bug_type mismatch."
+        )
+        self.assertEqual(
+            self.sample_bug.status, "todo", "Bug creation failed: status mismatch."
+        )
 
     def test_bug_str_representation(self):
         """
         Test the string representation of a bug instance.
         """
-        self.assertEqual(str(self.sample_bug), "Sample Bug")
+        self.assertEqual(
+            str(self.sample_bug), "Sample Bug", "String representation failed."
+        )
 
     def test_bug_report_date_auto_generated(self):
         """
         Test if the report_date field is auto-generated.
         """
-        self.assertIsNotNone(self.sample_bug.report_date)
+        self.assertIsNotNone(
+            self.sample_bug.report_date, "Report date not auto-generated."
+        )
 
     def test_bug_title_unique(self):
         """
@@ -50,8 +62,11 @@ class BugModelTestCase(TestCase):
             bug_type="error",
             status="todo",
         )
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as context:
             duplicate_bug.save()
+        self.assertEqual(
+            str(context.exception), "UNIQUE constraint failed: bug_hub_bug.title"
+        )
 
     def test_bug_type_choices(self):
         """
@@ -64,7 +79,11 @@ class BugModelTestCase(TestCase):
         )
         with self.assertRaises(Exception) as context:
             bug.full_clean()
-        self.assertIn("bug_type", context.exception.message_dict)
+        self.assertIn(
+            "bug_type",
+            context.exception.message_dict,
+            "Select a valid choice for the bug type",
+        )
 
     def test_status_choices(self):
         """
@@ -78,7 +97,11 @@ class BugModelTestCase(TestCase):
         )
         with self.assertRaises(Exception) as context:
             bug.full_clean()
-        self.assertIn("status", context.exception.message_dict)
+        self.assertIn(
+            "status",
+            context.exception.message_dict,
+            "Select a valid choice for the bug status",
+        )
 
     def test_bug_description_length(self):
         """
@@ -88,7 +111,11 @@ class BugModelTestCase(TestCase):
         bug = Bug.objects.create(
             title="Test Bug", description=long_description, bug_type="error"
         )
-        self.assertEqual(bug.description, long_description)
+        self.assertEqual(
+            bug.description,
+            long_description,
+            "Ensure the description has at most 1000 characters.",
+        )
 
     def test_bug_title_max_length(self):
         """
@@ -100,7 +127,11 @@ class BugModelTestCase(TestCase):
         )
         with self.assertRaises(ValidationError) as context:
             bug.full_clean()
-        self.assertIn("title", context.exception.message_dict)
+        self.assertIn(
+            "title",
+            context.exception.message_dict,
+            "Ensure the bug title has at most 250 characters.",
+        )
 
     def test_bug_title_min_length(self):
         """
@@ -112,7 +143,11 @@ class BugModelTestCase(TestCase):
         )
         with self.assertRaises(ValidationError) as context:
             bug.full_clean()
-        self.assertIn("title", context.exception.message_dict)
+        self.assertIn(
+            "title",
+            context.exception.message_dict,
+            "Ensure the bug title has at least 10 characters.",
+        )
 
     def test_bug_listing(self):
         """
