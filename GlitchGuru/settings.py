@@ -75,6 +75,8 @@ TEMPLATES = [
     },
 ]
 
+handler404 = 'GlitchGuru.views.Custom404View.as_view()'
+
 WSGI_APPLICATION = "GlitchGuru.wsgi.application"
 
 

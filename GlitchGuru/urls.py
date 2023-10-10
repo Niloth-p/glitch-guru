@@ -22,4 +22,5 @@ urlpatterns = [
     path("", views.HomePageView.as_view(), name="home"),
     path("admin/", admin.site.urls),
     path("bugs/", include("bug_hub.urls")),
+    path('<path:unknown_path>', views.Custom404View.as_view(), name='custom_404'),
 ]
