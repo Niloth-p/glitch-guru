@@ -6,4 +6,15 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-{% endblock %}
+
+{% if form.errors %}
+
+<div class="alert alert-danger">
+  <strong>Error!</strong> Please correct the following errors:
+  <ul>
+    {% for error in form.errors %}
+    <li class="error-message">{{ error }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %} {% endblock %}
