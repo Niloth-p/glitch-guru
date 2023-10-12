@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gitch Guru Home</title>
+    <script>
+      function handleLoadingError(libname) {
+        alert(`Error loading ${libname}. Please try again later.`);
+      }
+    </script>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+      lib-not-loaded="bootstrap css"
     />
   </head>
   <body>
@@ -56,9 +63,20 @@
       </div>
     </div>
 
-    <!-- Include Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+      lib-not-loaded="jquery"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+      lib-not-loaded="popper"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+      lib-not-loaded="bootstrap js"
+    ></script>
   </body>
 </html>
