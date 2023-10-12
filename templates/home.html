@@ -15,9 +15,25 @@
       onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
       lib-not-loaded="bootstrap css"
     />
+    <style>
+      body.dark-mode,
+      .dark-mode th,
+      .dark-mode td,
+      body.dark-mode .card {
+        background-color: #121212;
+        color: #ffffff;
+      }
+      body.dark-mode .card {
+        border: 1px solid #3498db;
+      }
+      body.dark-mode .jumbotron {
+        background-color: #303030;
+        border: 1px solid green;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Glitch Guru: Bug Tracker</a>
       <button
         class="navbar-toggler"
@@ -38,9 +54,12 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'bug_hub:bug_list' %}">Bug List</a>
+            <a class="nav-link" href="{% url 'bug_hub:bug_list' %}">Bugs</a>
           </li>
         </ul>
+        <button id="darkModeToggle" class="btn btn-primary ml-2">
+          Toggle Dark Mode
+        </button>
       </div>
     </nav>
 
@@ -78,5 +97,19 @@
       onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
       lib-not-loaded="bootstrap js"
     ></script>
+    <script>
+      $(document).ready(function () {
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+        if (isDarkMode) {
+          $("body").addClass("dark-mode");
+        }
+
+        $("#darkModeToggle").click(function () {
+          $("body").toggleClass("dark-mode");
+          localStorage.setItem("darkMode", $("body").hasClass("dark-mode"));
+        });
+      });
+    </script>
   </body>
 </html>
