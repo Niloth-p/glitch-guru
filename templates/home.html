@@ -1,115 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gitch Guru Home</title>
-    <script>
-      function handleLoadingError(libname) {
-        alert(`Error loading ${libname}. Please try again later.`);
-      }
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="bootstrap css"
-    />
-    <style>
-      body.dark-mode,
-      .dark-mode th,
-      .dark-mode td,
-      body.dark-mode .card {
-        background-color: #121212;
-        color: #ffffff;
-      }
-      body.dark-mode .card {
-        border: 1px solid #3498db;
-      }
-      body.dark-mode .jumbotron {
-        background-color: #303030;
-        border: 1px solid green;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Glitch Guru: Bug Tracker</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'bug_hub:bug_list' %}">Bugs</a>
-          </li>
-        </ul>
-        <button id="darkModeToggle" class="btn btn-primary ml-2">
-          Toggle Dark Mode
-        </button>
-      </div>
-    </nav>
-
-    <div class="container mt-4">
-      <div class="jumbotron">
-        <h1 class="display-4">Welcome to Glitch Guru</h1>
-        <p class="lead">
-          Track and manage bugs efficiently with our Bug Tracker app.
-        </p>
-        <hr class="my-4" />
-        <p>
-          Get started by browsing existing bugs or creating a new bug report.
-        </p>
-        <a
-          class="btn btn-primary btn-lg"
-          href="{% url 'bug_hub:bug_list' %}"
-          role="button"
-          >Browse Bugs</a
-        >
-      </div>
-    </div>
-
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="jquery"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="popper"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="bootstrap js"
-    ></script>
-    <script>
-      $(document).ready(function () {
-        const isDarkMode = localStorage.getItem("darkMode") === "true";
-
-        if (isDarkMode) {
-          $("body").addClass("dark-mode");
-        }
-
-        $("#darkModeToggle").click(function () {
-          $("body").toggleClass("dark-mode");
-          localStorage.setItem("darkMode", $("body").hasClass("dark-mode"));
-        });
-      });
-    </script>
-  </body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Glitch Guru</h1>
+    <p class="lead">
+      Track and manage bugs efficiently with our Bug Tracker app.
+    </p>
+    <hr class="my-4" />
+    <p>Get started by browsing existing bugs or creating a new bug report.</p>
+    <a
+      class="btn btn-primary btn-lg"
+      href="{% url 'bug_hub:bug_list' %}"
+      role="button"
+      >Browse Bugs</a
+    >
+  </div>
+</div>
+{% endblock %}
