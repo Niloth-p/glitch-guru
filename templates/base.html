@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Glitch Guru{% endblock %}</title>
+    <title>
+      {% block title %}
+        Glitch Guru
+      {% endblock title %}
+    </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'common/css/dark_mode.css' %}" />
     <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
@@ -12,104 +16,29 @@
         alert(`Error loading ${libname}. Please try again later.`);
       }
     </script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="bootstrap css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="fontawesome"
-    />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+          lib-not-loaded="bootstrap css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+          lib-not-loaded="fontawesome" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Glitch Guru: Bug Tracker</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'bug_hub:bug_list' %}">Bugs</a>
-          </li>
-        </ul>
-        <button id="darkModeToggle" class="btn btn-primary ml-2">
-          Toggle Dark Mode
-        </button>
-      </div>
-    </nav>
-
-    {% block content %} {% endblock %}
-
-    <!-- footer.html -->
-    <footer class="footer fixed-bottom">
-      <div class="col-md-2 text-center">
-        <a href="#top" class="btn btn-primary btn-sm btn-center" role="button"
-          >Back to Top</a
-        >
-      </div>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-2">
-            <ul class="list-unstyled d-flex justify-content-start">
-              <li class="social-icon"><i class="fab fa-facebook fa-2x"></i></li>
-              <li class="social-icon"><i class="fab fa-twitter fa-2x"></i></li>
-              <li class="social-icon">
-                <i class="fab fa-instagram fa-2x"></i>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 text-center">
-            <h4>About Our Bug Tracker</h4>
-            <p>Efficiently manage software bugs with our platform.</p>
-          </div>
-          <div class="col-md-3 text-center">
-            <h4>Quick Links</h4>
-            <ul class="list-unstyled">
-              <li><a href="/">Home</a></li>
-              <li><a href="/bugs">Browse Bugs</a></li>
-              <li><a href="/create-bug">Report a Bug</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 text-center">
-            <h4>Contact the Dev</h4>
-            <h5>Name</h5>
-            <p>Email: email@email.com</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="jquery"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="popper"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
-      lib-not-loaded="bootstrap js"
-    ></script>
+    {% include "header.html" %}
+    {% block content %}
+    {% endblock content %}
+    {% include "footer.html" %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+            lib-not-loaded="jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+            onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+            lib-not-loaded="popper"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            onerror="handleLoadingError(this.getAttribute('lib-not-loaded'))"
+            lib-not-loaded="bootstrap js"></script>
     <script src="{% static 'common/js/dark_mode_script.js' %}"></script>
   </body>
 </html>
