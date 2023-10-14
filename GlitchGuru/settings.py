@@ -31,6 +31,11 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG") == "True"
 
+MIDDLEWARE = []
+if DEBUG:
+    # Enable Debug Toolbar
+    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+    INTERNAL_IPS = ["127.0.0.1"]
 
 ALLOWED_HOSTS = []
 
@@ -45,9 +50,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "bug_hub.apps.BugHubConfig",
+    "debug_toolbar",
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE += [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -75,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-handler404 = 'GlitchGuru.views.Custom404View.as_view()'
+handler404 = "GlitchGuru.views.Custom404View.as_view()"
 
 WSGI_APPLICATION = "GlitchGuru.wsgi.application"
 
@@ -131,8 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "static"
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
