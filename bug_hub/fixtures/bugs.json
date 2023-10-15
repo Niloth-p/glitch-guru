@@ -1,0 +1,222 @@
+[
+  {
+    "model": "bug_hub.bug",
+    "pk": 11,
+    "fields": {
+      "title": "Critical Security Vulnerability",
+      "description": "A critical security vulnerability has been identified. Immediate action is required to patch it.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-14T08:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 12,
+    "fields": {
+      "title": "Feature Request: Social Media Sharing",
+      "description": "Add social media sharing capabilities to increase user engagement.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-14T08:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 13,
+    "fields": {
+      "title": "Enhancement: Performance Optimization",
+      "description": "Optimize system performance for faster response times and improved user experience.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-14T09:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 14,
+    "fields": {
+      "title": "User Documentation Update",
+      "description": "Update user documentation to reflect recent changes and improvements in the system.",
+      "bug_type": "documentation",
+      "status": "done",
+      "report_date": "2023-10-14T09:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 15,
+    "fields": {
+      "title": "Critical Error in User Authentication",
+      "description": "Users are unable to log in due to a critical error in the authentication process. This needs immediate attention.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-14T10:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 16,
+    "fields": {
+      "title": "Feature Request: User Profile Page",
+      "description": "We should implement a user profile page where users can edit their personal information and settings.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-14T10:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 17,
+    "fields": {
+      "title": "Enhancement: Faster Image Uploads",
+      "description": "Optimize image upload functionality to reduce upload times and improve the user experience.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-14T11:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 18,
+    "fields": {
+      "title": "Database Connection Error on Production Server",
+      "description": "The production server is experiencing intermittent database connection errors. Investigate and resolve the issue.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-14T11:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 19,
+    "fields": {
+      "title": "Feature Request: Mobile App Integration",
+      "description": "Integrate the system with a mobile app to enhance user accessibility and convenience.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-14T12:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 20,
+    "fields": {
+      "title": "Enhancement: Multi-Language Support",
+      "description": "Implement multi-language support to make the platform accessible to a global audience.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-14T12:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 31,
+    "fields": {
+      "title": "Critical Data Loss Bug",
+      "description": "This bug results in data loss, and it's affecting our users. It's a top priority.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-15T08:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 32,
+    "fields": {
+      "title": "Feature Request: Dark Mode",
+      "description": "Users have requested a dark mode for the application. Let's implement it to enhance user experience.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-15T08:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 33,
+    "fields": {
+      "title": "Enhancement: Real-time Notifications",
+      "description": "Implement real-time notifications to keep users updated on important events.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-15T09:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 34,
+    "fields": {
+      "title": "Performance Issue on Mobile Devices",
+      "description": "Users are experiencing performance issues on mobile devices. Optimize for better mobile experience.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-15T09:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 35,
+    "fields": {
+      "title": "Feature Request: Export Data",
+      "description": "Users want the ability to export their data. Let's provide this feature.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 36,
+    "fields": {
+      "title": "Enhancement: Improved Search Functionality",
+      "description": "Enhance the search functionality to make it more powerful and user-friendly.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-15T10:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 37,
+    "fields": {
+      "title": "Broken Links in Documentation",
+      "description": "There are broken links in the user documentation. We need to fix them.",
+      "bug_type": "documentation",
+      "status": "done",
+      "report_date": "2023-10-15T11:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 38,
+    "fields": {
+      "title": "Critical Network Connectivity Issue",
+      "description": "Some users are facing connectivity issues. We need to investigate and resolve this problem.",
+      "bug_type": "error",
+      "status": "todo",
+      "report_date": "2023-10-15T11:30:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 39,
+    "fields": {
+      "title": "Feature Request: Export Reports",
+      "description": "Add the ability for users to export reports generated by the system.",
+      "bug_type": "feature",
+      "status": "in_progress",
+      "report_date": "2023-10-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "bug_hub.bug",
+    "pk": 40,
+    "fields": {
+      "title": "Enhancement: User Onboarding Flow",
+      "description": "Optimize the user onboarding process to improve user retention and satisfaction.",
+      "bug_type": "enhancement",
+      "status": "under_review",
+      "report_date": "2023-10-15T12:30:00Z"
+    }
+  }
+]
