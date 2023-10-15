@@ -1,44 +1,40 @@
-{% extends "base.html" %} {% block content %}
-<div class="container">
-  <h1>Bug Hub</h1>
-  <a href="{% url 'bug_hub:bug_create' %}" class="btn btn-primary mb-3"
-    >Create New Bug Report</a
-  >
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Created Date</th>
-        <th>Type</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for bug in bugs %}
-      <tr>
-        <td>#{{ bug.id }}</td>
-        <td>
-          <a href="{% url 'bug_hub:bug_detail' bug.pk %}">{{ bug.title }}</a>
-        </td>
-        <td>{{ bug.report_date }}</td>
-        <td>{{ bug.get_bug_type_display }}</td>
-        <td>{{ bug.get_status_display }}</td>
-        <td>
-          <a
-            href="{% url 'bug_hub:bug_detail' bug.pk %}"
-            class="btn btn-info btn-sm"
-            >View</a
-          >
-        </td>
-      </tr>
-      {% empty %}
-      <tr>
-        <td colspan="5">No bugs found.</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <h1>Bug Hub</h1>
+    <a href="{% url 'bug_hub:bug_create' %}" class="btn btn-primary mb-3">Create New Bug Report</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Created Date</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bug in bugs %}
+          <tr>
+            <td>#{{ bug.id }}</td>
+            <td>
+              <a href="{% url 'bug_hub:bug_detail' bug.pk %}">{{ bug.title }}</a>
+            </td>
+            <td>{{ bug.report_date }}</td>
+            <td>{{ bug.get_bug_type_display }}</td>
+            <td>{{ bug.get_status_display }}</td>
+            <td>
+              <a href="{% url 'bug_hub:bug_detail' bug.pk %}"
+                 class="btn btn-info btn-sm">View</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="5">No bugs found.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

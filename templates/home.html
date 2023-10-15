@@ -1,18 +1,14 @@
-{% extends 'base.html' %} {% block content %}
-<div class="container mt-4">
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to Glitch Guru</h1>
-    <p class="lead">
-      Track and manage bugs efficiently with our Bug Tracker app.
-    </p>
-    <hr class="my-4" />
-    <p>Get started by browsing existing bugs or creating a new bug report.</p>
-    <a
-      class="btn btn-primary btn-lg"
-      href="{% url 'bug_hub:bug_list' %}"
-      role="button"
-      >Browse Bugs</a
-    >
+{% extends "base.html" %}
+{% block content %}
+  <div class="container mt-4">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to Glitch Guru</h1>
+      <p class="lead">Track and manage bugs efficiently with our Bug Tracker app.</p>
+      <hr class="my-4" />
+      <p>Get started by browsing existing bugs or creating a new bug report.</p>
+      <a class="btn btn-primary btn-lg"
+         href="{% url 'bug_hub:bug_list' %}"
+         role="button">Browse Bugs</a>
+    </div>
   </div>
-</div>
-{% endblock %}
+{% endblock content %}

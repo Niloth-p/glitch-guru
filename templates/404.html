@@ -1,6 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Sorry, the page you're looking for is not available. Please explore our site using the navigation menu.">
+    <meta name="keywords"
+          content="404 error, page not found, broken link, missing webpage, website error, troubleshooting">
+    <meta name="author" content="Niloth">
     <title>404 Not Found - Glitch Guru</title>
     <style>
       body {
@@ -40,7 +47,7 @@
       <div class="error-message">Not Found</div>
       <p>Oops! The page you're looking for doesn't exist.</p>
       <div class="back-button">
-        <a href="/">Go back to Glitch Guru</a>
+        <a href="{% url 'home' %}">Go back to Glitch Guru</a>
       </div>
     </div>
   </body>
