@@ -1,0 +1,33 @@
+.social-icon {
+  margin-right: 10px;
+}
+
+.btn-center {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+footer .row:last-child p {
+  margin-bottom: 0;
+}
+
+.emphasized-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+#social-icon-list {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  border: 1px solid green;
+  background-color: #F5F5F5;
+}
+
+.btn-custom-padding {
+  margin: 1.5rem;
+}

@@ -20,10 +20,6 @@ db.sqlite3-journal
 # Ignore sensitive data configuration
 *.env
 
-# Ignore media and static files
-media/
-static/
-
 # Ignore generated migration files
 */migrations/
 

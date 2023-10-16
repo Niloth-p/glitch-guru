@@ -1,0 +1,13 @@
+body.dark-mode,
+.dark-mode .card {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .card {
+  border: 1px solid #3498db;
+}
+
+body.dark-mode .jumbotron {
+  background-color: #303030;
+}
