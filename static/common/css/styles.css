@@ -25,9 +25,17 @@ footer .row:last-child p {
 
 .jumbotron {
   border: 1px solid green;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .btn-custom-padding {
   margin: 1.5rem;
+}
+
+@media (min-height: 768px) and (min-width: 500px) {
+  .sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }
