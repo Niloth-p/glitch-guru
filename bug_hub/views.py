@@ -9,7 +9,7 @@ class BugListView(ListView):
     model = Bug
     template_name = "bug_hub/bug_list.html"
     context_object_name = "bugs"
-    paginate_by = 20
+    paginate_by = 10
     ordering = ["-report_date"]
 
 

@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for bug in bugs %}
+        {% for bug in page_obj.object_list %}
           <tr>
             <td>#{{ bug.id }}</td>
             <td>
@@ -36,5 +36,21 @@
         {% endfor %}
       </tbody>
     </table>
+    <div class="row">
+      {% if is_paginated %}
+        <div class="col-6">
+          {% if page_obj.has_previous %}
+            <a href="?page=1" class="mx-1">« First</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="mx-1">Previous</a>
+          {% endif %}
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="mx-1">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="mx-1">Last »</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
   </div>
 {% endblock content %}
