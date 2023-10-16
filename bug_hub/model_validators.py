@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
+from constants import MIN_CHAR_LENGTH_BUG_TITLE
 
 
 def validate_description_not_empty(value):
@@ -35,5 +36,5 @@ def validate_status(value):
 
 def validate_min_length(value):
     """Ensure that the title field value is at least 10 characters long"""
-    if len(value) < 10:
+    if len(value) < MIN_CHAR_LENGTH_BUG_TITLE:
         raise ValidationError("Title must be at least 10 characters long.")

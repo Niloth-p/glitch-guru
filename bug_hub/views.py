@@ -1,15 +1,16 @@
 from django.views.generic import ListView, DetailView, CreateView
-from bug_hub.models import Bug
 from django.urls import reverse_lazy
+from bug_hub.models import Bug
 from .forms import BugCreationForm
 from django.http import HttpResponseServerError
+from constants import PAGINATE_BY
 
 
 class BugListView(ListView):
     model = Bug
     template_name = "bug_hub/bug_list.html"
     context_object_name = "bugs"
-    paginate_by = 10
+    paginate_by = PAGINATE_BY
     ordering = ["-report_date"]
 
 

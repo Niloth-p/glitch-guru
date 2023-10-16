@@ -11,6 +11,7 @@ from .model_validators import (
     validate_status,
     validate_min_length,
 )
+from constants import MAX_CHAR_LENGTH_BUG_TITLE
 
 
 class Bug(models.Model):
@@ -29,7 +30,7 @@ class Bug(models.Model):
     """
 
     title = models.CharField(
-        max_length=250,
+        max_length=MAX_CHAR_LENGTH_BUG_TITLE,
         unique=True,
         verbose_name="Bug Title",
         help_text="Enter a concise title for the bug report.",
