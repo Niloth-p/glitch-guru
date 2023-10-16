@@ -11,7 +11,7 @@ from .model_validators import (
     validate_status,
     validate_min_length,
 )
-from constants import MAX_CHAR_LENGTH_BUG_TITLE
+from config.constants import MAX_CHAR_LENGTH_BUG_TITLE
 
 
 class Bug(models.Model):

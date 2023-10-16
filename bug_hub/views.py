@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from bug_hub.models import Bug
 from .forms import BugCreationForm
 from django.http import HttpResponseServerError
-from constants import PAGINATE_BY
+from config.constants import PAGINATE_BY
 
 
 class BugListView(ListView):
