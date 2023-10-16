@@ -9,37 +9,8 @@
           content="404 error, page not found, broken link, missing webpage, website error, troubleshooting">
     <meta name="author" content="Niloth">
     <title>404 Not Found - Glitch Guru</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f6f8fa;
-        text-align: center;
-      }
-      .container {
-        max-width: 400px;
-        margin: 100px auto;
-        background-color: #fff;
-        border-radius: 5px;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .error-code {
-        font-size: 100px;
-        color: #e34c26;
-      }
-      .error-message {
-        font-size: 24px;
-        margin-top: -20px;
-      }
-      .back-button {
-        margin-top: 20px;
-      }
-      .back-button a {
-        text-decoration: none;
-        color: #0366d6;
-        font-weight: bold;
-      }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/css/404.css' %}" />
   </head>
   <body>
     <div class="container">
