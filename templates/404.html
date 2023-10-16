@@ -8,7 +8,7 @@
     <meta name="keywords"
           content="404 error, page not found, broken link, missing webpage, website error, troubleshooting">
     <meta name="author" content="Niloth">
-    <title>404 Not Found - Glitch Guru</title>
+    <title>404 Not Found - {{ PRODUCT_NAME }}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'common/css/404.css' %}" />
   </head>
@@ -18,7 +18,7 @@
       <div class="error-message">Not Found</div>
       <p>Oops! The page you're looking for doesn't exist.</p>
       <div class="back-button">
-        <a href="{% url 'home' %}">Go back to Glitch Guru</a>
+        <a href="{% url 'home' %}">Go back to {{ PRODUCT_NAME }}</a>
       </div>
     </div>
   </body>
