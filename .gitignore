@@ -19,6 +19,7 @@ db.sqlite3-journal
 
 # Ignore sensitive data configuration
 *.env
+settings_local.py
 
 # Ignore generated migration files
 */migrations/
@@ -50,3 +51,10 @@ test_db.sqlite3
 # Ignore system and backup files
 .DS_Store
 Thumbs.db
+
+# Sphinx - Ignore generated and static files and folders
+build/
+_build/
+_templates/
+*.rst.inc
+*.html
