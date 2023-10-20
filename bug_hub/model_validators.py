@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 from config.constants import MIN_CHAR_LENGTH_BUG_TITLE
+from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 
 
 def validate_description_not_empty(value):

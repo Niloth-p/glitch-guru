@@ -3,6 +3,7 @@ Database models for storing bug information and related data
 """
 
 from django.db import models
+from config.constants import MAX_CHAR_LENGTH_BUG_TITLE
 from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 from .model_validators import (
     validate_bug_type,
@@ -11,7 +12,6 @@ from .model_validators import (
     validate_status,
     validate_min_length,
 )
-from config.constants import MAX_CHAR_LENGTH_BUG_TITLE
 
 
 class Bug(models.Model):
