@@ -3,9 +3,11 @@ from bug_hub.models import Bug
 from django.core.exceptions import ValidationError
 import time
 
-
 # pylint: disable=E1101
 class BugModelTestCase(TestCase):
+    """
+    Test case for the Bug model.
+    """
     def setUp(self):
         """
         Create a sample bug instance for testing
@@ -22,18 +24,24 @@ class BugModelTestCase(TestCase):
         Test if a bug instance can be created correctly.
         """
         self.assertEqual(
-            self.sample_bug.title, "Sample Bug", "Bug creation failed: title mismatch."
+            first=self.sample_bug.title,
+            second="Sample Bug",
+            msg="Bug creation failed: title mismatch."
         )
         self.assertEqual(
-            self.sample_bug.description,
-            "This is a sample bug description.",
-            "Bug creation failed: description mismatch.",
+            first=self.sample_bug.description,
+            second="This is a sample bug description.",
+            msg="Bug creation failed: description mismatch.",
         )
         self.assertEqual(
-            self.sample_bug.bug_type, "error", "Bug creation failed: bug_type mismatch."
+            first=self.sample_bug.bug_type,
+            second="error",
+            msg="Bug creation failed: bug_type mismatch."
         )
         self.assertEqual(
-            self.sample_bug.status, "todo", "Bug creation failed: status mismatch."
+            first=self.sample_bug.status,
+            second="todo",
+            msg="Bug creation failed: status mismatch."
         )
 
     def test_bug_str_representation(self):
@@ -41,7 +49,9 @@ class BugModelTestCase(TestCase):
         Test the string representation of a bug instance.
         """
         self.assertEqual(
-            str(self.sample_bug), "Sample Bug", "String representation failed."
+            first=str(self.sample_bug),
+            second="Sample Bug",
+            msg="String representation failed."
         )
 
     def test_bug_report_date_auto_generated(self):
@@ -49,7 +59,7 @@ class BugModelTestCase(TestCase):
         Test if the report_date field is auto-generated.
         """
         self.assertIsNotNone(
-            self.sample_bug.report_date, "Report date not auto-generated."
+            obj=self.sample_bug.report_date, msg="Report date not auto-generated."
         )
 
     def test_bug_title_unique(self):
@@ -62,10 +72,11 @@ class BugModelTestCase(TestCase):
             bug_type="error",
             status="todo",
         )
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(expected_exception=Exception) as context:
             duplicate_bug.save()
         self.assertEqual(
-            str(context.exception), "UNIQUE constraint failed: bug_hub_bug.title"
+            first=str(context.exception),
+            second="UNIQUE constraint failed: bug_hub_bug.title"
         )
 
     def test_bug_type_choices(self):
@@ -77,12 +88,12 @@ class BugModelTestCase(TestCase):
             description="This is a test bug.",
             bug_type="invalid_type",
         )
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(expected_exception=Exception) as context:
             bug.full_clean()
         self.assertIn(
-            "bug_type",
-            context.exception.message_dict,
-            "Select a valid choice for the bug type",
+            member="bug_type",
+            container=context.exception.message_dict,
+            msg="Select a valid choice for the bug type",
         )
 
     def test_status_choices(self):
@@ -95,12 +106,12 @@ class BugModelTestCase(TestCase):
             bug_type="error",
             status="invalid_status",
         )
-        with self.assertRaises(Exception) as context:
+        with self.assertRaises(expected_exception=Exception) as context:
             bug.full_clean()
         self.assertIn(
-            "status",
-            context.exception.message_dict,
-            "Select a valid choice for the bug status",
+            member="status",
+            container=context.exception.message_dict,
+            msg="Select a valid choice for the bug status",
         )
 
     def test_bug_description_length(self):
@@ -112,9 +123,9 @@ class BugModelTestCase(TestCase):
             title="Test Bug", description=long_description, bug_type="error"
         )
         self.assertEqual(
-            bug.description,
-            long_description,
-            "Ensure the description has at most 1000 characters.",
+            first=bug.description,
+            second=long_description,
+            msg="Ensure the description has at most 1000 characters.",
         )
 
     def test_bug_title_max_length(self):
@@ -125,12 +136,12 @@ class BugModelTestCase(TestCase):
         bug = Bug.objects.create(
             title=long_title, description="This is a test bug.", bug_type="error"
         )
-        with self.assertRaises(ValidationError) as context:
+        with self.assertRaises(expected_exception=ValidationError) as context:
             bug.full_clean()
         self.assertIn(
-            "title",
-            context.exception.message_dict,
-            "Ensure the bug title has at most 250 characters.",
+            member="title",
+            container=context.exception.message_dict,
+            msg="Ensure the bug title has at most 250 characters.",
         )
 
     def test_bug_title_min_length(self):
@@ -141,12 +152,12 @@ class BugModelTestCase(TestCase):
         bug = Bug.objects.create(
             title=short_title, description="This is a test bug.", bug_type="error"
         )
-        with self.assertRaises(ValidationError) as context:
+        with self.assertRaises(expected_exception=ValidationError) as context:
             bug.full_clean()
         self.assertIn(
-            "title",
-            context.exception.message_dict,
-            "Ensure the bug title has at least 10 characters.",
+            member="title",
+            container=context.exception.message_dict,
+            msg="Ensure the bug title has at least 10 characters.",
         )
 
     def test_bug_listing(self):
@@ -160,17 +171,17 @@ class BugModelTestCase(TestCase):
             title="Bug 2", description="This is bug 2.", bug_type="feature_request"
         )
         bug_list = Bug.objects.all()
-        self.assertIn(bug1, bug_list)
-        self.assertIn(bug2, bug_list)
+        self.assertIn(member=bug1, container=bug_list)
+        self.assertIn(member=bug2, container=bug_list)
 
     def test_bug_ordering(self):
         """
         Verify that Bug instances are correctly ordered by 'report_date.'
         """
-        time.sleep(1)
+        time.sleep(secs=1)
         bug2 = Bug.objects.create(
             title="Bug 2", description="This is bug 2.", bug_type="feature_request"
         )
         bug_list = Bug.objects.all()
-        self.assertEqual(bug_list[0], bug2)
-        self.assertEqual(bug_list[1], self.sample_bug)
+        self.assertEqual(first=bug_list[0], second=bug2)
+        self.assertEqual(first=bug_list[1], second=self.sample_bug)

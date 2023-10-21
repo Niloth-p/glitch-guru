@@ -3,6 +3,7 @@ Database models for storing bug information and related data
 """
 
 from django.db import models
+from config.constants import MAX_CHAR_LENGTH_BUG_TITLE
 from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 from .model_validators import (
     validate_bug_type,
@@ -11,8 +12,6 @@ from .model_validators import (
     validate_status,
     validate_min_length,
 )
-from config.constants import MAX_CHAR_LENGTH_BUG_TITLE
-
 
 class Bug(models.Model):
     """
@@ -27,6 +26,9 @@ class Bug(models.Model):
         bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
         report_date (DateTimeField): The date when the bug was reported. User cannot set it. Only auto-generated.
         status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
+
+    Methods:
+        __str__(): Returns a string representation of the bug.
     """
 
     title = models.CharField(
@@ -72,7 +74,7 @@ class Bug(models.Model):
     )
 
     def __str__(self):
-        return str(self.title)
+        return str(object=self.title)
 
     class Meta:
         """
