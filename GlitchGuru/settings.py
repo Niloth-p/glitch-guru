@@ -24,15 +24,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 
-MIDDLEWARE = []
-if DEBUG:
-    # Enable Debug Toolbar
-    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"]
-    INTERNAL_IPS = ["127.0.0.1"]
-
-
-# Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -41,8 +32,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "bug_hub.apps.BugHubConfig",
-    "debug_toolbar",
 ]
+
+MIDDLEWARE = []
+if DEBUG:
+    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+    INTERNAL_IPS = ["127.0.0.1"]
+    INSTALLED_APPS += ["debug_toolbar"]
 
 MIDDLEWARE += [
     "django.middleware.security.SecurityMiddleware",
@@ -108,11 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -130,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static/"),)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
