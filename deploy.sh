@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Source environment variables (PROJECT_DIR) from settings_local.py
-source GlitchGuru/settings_local.py
+source .env
 
 # Define project-specific variables
 REQUIREMENTS_FILE="${PROJECT_DIR}/requirements.txt"

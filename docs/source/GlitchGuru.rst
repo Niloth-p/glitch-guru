@@ -17,21 +17,6 @@ GlitchGuru.settings module
    :undoc-members:
    :show-inheritance:
 
-GlitchGuru.settings\_local module
----------------------------------
-
-.. automodule:: GlitchGuru.settings_local
-   :noindex:
-   :show-inheritance:
-
-GlitchGuru.settings\_local\_example module
-------------------------------------------
-
-.. automodule:: GlitchGuru.settings_local_example
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 GlitchGuru.urls module
 ----------------------
 

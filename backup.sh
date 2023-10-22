@@ -1,5 +1,4 @@
-# Source environment variables (PROJECT_DIR) from settings_local.py
-source GlitchGuru/settings_local.py
+source .env
 
 SOURCE_BRANCH="main"
 BACKUP_BRANCH="backup"
