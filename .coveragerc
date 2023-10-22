@@ -1,0 +1,3 @@
+[run]
+source = bug_hub, GlitchGuru
+omit = */migrations/*, */tests/*, GlitchGuru/settings_local_example.py, GlitchGuru/asgi.py, GlitchGuru/wsgi.py
