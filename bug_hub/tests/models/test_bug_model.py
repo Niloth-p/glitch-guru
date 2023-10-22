@@ -178,7 +178,7 @@ class BugModelTestCase(TestCase):
         """
         Verify that Bug instances are correctly ordered by 'report_date.'
         """
-        time.sleep(secs=1)
+        time.sleep(1)
         bug2 = Bug.objects.create(
             title="Bug 2", description="This is bug 2.", bug_type="feature_request"
         )

@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from bug_hub.models import Bug
+from config.constants import PAGINATE_BY
 
 
 class BugListViewTestCase(TestCase):
@@ -44,4 +45,4 @@ class BugListViewTestCase(TestCase):
 
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context["bugs"]), 20)
+        self.assertEqual(len(response.context["bugs"]), PAGINATE_BY)
