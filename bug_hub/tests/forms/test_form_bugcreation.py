@@ -1,6 +1,8 @@
 from django.test import TestCase
+from django.core.exceptions import ValidationError
 from django.urls import reverse
 from bug_hub.forms import BugCreationForm
+from bug_hub.models import Bug
 
 class BugCreationFormTestCase(TestCase):
     """
@@ -40,3 +42,13 @@ class BugCreationFormTestCase(TestCase):
         form = BugCreationForm({})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors["title"], ["This field is required."])
+
+    def test_clean_title_duplicate(self):
+        """
+        Test the clean_title() method of the BugCreationForm class when a duplicate title is provided.
+        """
+        Bug.objects.create(title="Duplicate Title")
+        form = BugCreationForm()
+        form.cleaned_data = {"title": "Duplicate Title"}
+        with self.assertRaises(ValidationError):
+            form.clean_title()
