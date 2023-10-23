@@ -6,14 +6,14 @@
       <div class="card-body">
         <h5 class="card-title">{{ bug.title }}</h5>
         <p class="card-text">
-          <strong>Type:</strong> {{ bug.bug_type }}
+          <strong>Type:</strong> {{ bug.get_bug_type_display }}
         </p>
         <p class="card-text">{{ bug.description }}</p>
         <p class="card-text">
           <strong>Created Date:</strong> {{ bug.report_date }}
         </p>
         <p class="card-text">
-          <strong>Status:</strong> {{ bug.status }}
+          <strong>Status:</strong> {{ bug.get_status_display }}
         </p>
       </div>
     </div>
