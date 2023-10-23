@@ -1,3 +1,8 @@
+"""
+This module contains unit tests for validating the view when 
+creating new bug reports in the Bug Hub application.
+"""
+
 from django.test import TestCase
 from django.urls import reverse
 from bug_hub.models import Bug
@@ -34,4 +39,6 @@ class BugCreateViewTestCase(TestCase):
             response,
             reverse("bug_hub:bug_list"),
         )
+        # pylint: disable=E1101
         self.assertTrue(Bug.objects.filter(title="Test Bug Title").exists())
+        # pylint: enable=E1101

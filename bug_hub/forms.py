@@ -1,3 +1,7 @@
+"""
+This module defines custom forms for the Bug Hub application.
+"""
+
 from django import forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -14,14 +18,18 @@ class BugCreationForm(forms.ModelForm):
         title (CharField): Name of the bug report.
         description (CharField): A detailed description of the bug.
         bug_type (ChoiceField): The type of bug, such as error, feature request, enhancement, documentation.
-        status (ChoiceField): The current status of the bug report (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
+        status (ChoiceField): The current status of the bug report 
+                (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
 
     Methods:
         clean_title(): Custom validation for ensuring that a bug report with the same title does not already exist.
     """
+
+    # pylint: disable=R0903
     class Meta:
         model = Bug
         fields = ["title", "description", "bug_type", "status"]
+    # pylint: disable=R0903
 
     title = forms.CharField(
         max_length=250,

@@ -37,4 +37,3 @@ class Custom404View(TemplateView):
         context = super().get_context_data(**kwargs)
         context['exception'] = Http404("Page not found. The requested page does not exist.")
         return context
-    

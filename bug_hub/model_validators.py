@@ -1,3 +1,7 @@
+"""
+This module contains custom validation functions for the Bug Hub application.
+"""
+
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from config.constants import MIN_CHAR_LENGTH_BUG_TITLE

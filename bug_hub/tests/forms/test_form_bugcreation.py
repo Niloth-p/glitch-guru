@@ -1,3 +1,8 @@
+"""
+This module contains unit tests for validating the form used for
+creating new bug reports in the Bug Hub application.
+"""
+
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.urls import reverse
@@ -47,7 +52,9 @@ class BugCreationFormTestCase(TestCase):
         """
         Test the clean_title() method of the BugCreationForm class when a duplicate title is provided.
         """
+        # pylint: disable=E1101
         Bug.objects.create(title="Duplicate Title")
+        # pylint: enable=E1101
         form = BugCreationForm()
         form.cleaned_data = {"title": "Duplicate Title"}
         with self.assertRaises(ValidationError):

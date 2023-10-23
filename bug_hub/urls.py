@@ -4,7 +4,9 @@ URL configuration for routing web requests to views in Bug_Hub.
 from django.urls import path
 from . import views
 
+# pylint: disable=C0103
 app_name = "bug_hub"
+# pylint: enable=C0103
 
 urlpatterns = [
     path(route="", view=views.BugListView.as_view(), name="bug_list"),

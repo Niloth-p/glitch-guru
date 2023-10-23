@@ -76,6 +76,7 @@ class Bug(models.Model):
     def __str__(self):
         return str(object=self.title)
 
+    # pylint: disable=R0903
     class Meta:
         """
         Meta Attributes:
@@ -87,3 +88,4 @@ class Bug(models.Model):
         verbose_name = "Bug"
         verbose_name_plural = "Bugs"
         ordering = ["-report_date"]
+    # pylint: disable=R0903

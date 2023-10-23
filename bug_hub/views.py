@@ -1,9 +1,12 @@
+"""
+This module defines all the views for the Bug Hub application.
+"""
 from django.views.generic import ListView, DetailView, CreateView
 from django.urls import reverse_lazy
-from bug_hub.models import Bug
-from .forms import BugCreationForm
 from django.http import HttpResponseServerError
+from bug_hub.models import Bug
 from config.constants import PAGINATE_BY
+from .forms import BugCreationForm
 
 class BugListView(ListView):
     """

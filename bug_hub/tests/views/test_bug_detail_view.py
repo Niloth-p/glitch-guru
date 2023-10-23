@@ -1,3 +1,7 @@
+"""
+This module contains unit tests for validating the view when 
+viewing the details of a bug report in the Bug Hub application.
+"""
 from django.test import TestCase
 from django.urls import reverse
 from bug_hub.models import Bug
@@ -21,11 +25,13 @@ class BugDetailViewTestCase(TestCase):
         """
         Set up the test environment by creating a test Bug object and initializing the URL.
         """
+        # pylint: disable=E1101
         self.bug = Bug.objects.create(
             title="Test Bug",
             bug_type="enhancement",
             status="wont_fix",
         )
+        # pylint: enable=E1101
         self.url = reverse("bug_hub:bug_detail", args=[self.bug.pk])
 
     def test_bug_detail_view(self):

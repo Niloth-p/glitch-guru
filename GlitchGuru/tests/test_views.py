@@ -1,6 +1,9 @@
+"""
+Test the common views across the project.
+"""
 from django.test import TestCase
-from GlitchGuru.views import Custom404View
 from django.http import Http404
+from GlitchGuru.views import Custom404View
 
 class GlitchGuruViewsTestCase(TestCase):
     """
@@ -20,4 +23,3 @@ class GlitchGuruViewsTestCase(TestCase):
         context = view.get_context_data()
         self.assertTrue('exception' in context)
         self.assertIsInstance(context['exception'], Http404)
-    

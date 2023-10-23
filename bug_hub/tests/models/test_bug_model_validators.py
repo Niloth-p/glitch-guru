@@ -1,10 +1,23 @@
+"""
+This module contains unit tests for the 
+custom validation functions of the Bug Hub application.
+"""
+
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.utils import timezone
 from bug_hub.choices import BUG_TYPE_CHOICES, STATUS_CHOICES
-from bug_hub.model_validators import validate_description_not_empty, validate_bug_type, validate_report_date_not_future, validate_status
+from bug_hub.model_validators import (
+    validate_description_not_empty,
+    validate_bug_type,
+    validate_report_date_not_future,
+    validate_status
+)
 
 class ValidatorsTestCase(TestCase):
+    """
+    Test case for the validators of the model Bug.
+    """
     def test_validate_description_not_empty(self):
         """
         Test the validation of bug report descriptinos by passing both empty and non-empty descriptions

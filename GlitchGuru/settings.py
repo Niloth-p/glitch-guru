@@ -73,7 +73,9 @@ TEMPLATES = [
     },
 ]
 
+# pylint: disable=C0103
 handler404 = "GlitchGuru.views.Custom404View.as_view()"
+# pylint: enable=C0103
 
 WSGI_APPLICATION = "GlitchGuru.wsgi.application"
 

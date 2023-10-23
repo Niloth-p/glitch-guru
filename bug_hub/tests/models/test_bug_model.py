@@ -1,7 +1,11 @@
-from django.test import TestCase
-from bug_hub.models import Bug
-from django.core.exceptions import ValidationError
+"""
+This module contains unit tests for validating the 
+bug report model of the Bug Hub application.
+"""
 import time
+from django.test import TestCase
+from django.core.exceptions import ValidationError
+from bug_hub.models import Bug
 
 # pylint: disable=E1101
 class BugModelTestCase(TestCase):
