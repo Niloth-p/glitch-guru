@@ -25,6 +25,37 @@ class BugListView(ListView):
     paginate_by = PAGINATE_BY
     ordering = ["-report_date"]
 
+    def get_queryset(self):
+        """
+        Returns a queryset object containing the filtered results
+        based on the filter parameters provided in the request.GET.        
+        """
+        queryset = super().get_queryset()
+        status_filter = self.request.GET.get('status', 'all')  
+        type_filter = self.request.GET.get('type', 'all')      
+        
+        if status_filter != 'all':
+            queryset = queryset.filter(status=status_filter)
+        elif type_filter != 'all':
+            queryset = queryset.filter(bug_type=type_filter)
+
+        self.status_filter = status_filter
+        self.type_filter = type_filter
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        """
+        Get the context data for the view.
+
+        :param kwargs: The keyword arguments passed to the function.
+        :return: The context data with additional filters.
+        """
+        context = super().get_context_data(**kwargs)
+        context['status_filter'] = self.status_filter
+        context['type_filter'] = self.type_filter
+        return context
+
 class BugDetailView(DetailView):
     """
     A view for displaying the details of a single bug report.

@@ -10,8 +10,74 @@
             <th>ID</th>
             <th>Title</th>
             <th>Created Date</th>
-            <th>Type</th>
-            <th>Status</th>
+            <th>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="typeDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">{{ type_filter|default:"All" }}</button>
+                <ul class="dropdown-menu" aria-labelledby="typeDropdown">
+                  <li>
+                    <a class="dropdown-item{% if type_filter == 'all' %} active{% endif %}"
+                       href="?type=all">All</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if type_filter == 'error' %} active{% endif %}"
+                       href="?type=error">Error</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if type_filter == 'feature' %} active{% endif %}"
+                       href="?type=feature">Feature Request</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if type_filter == 'enhancement' %} active{% endif %}"
+                       href="?type=enhancement">Enhancement</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if type_filter == 'documentation' %} active{% endif %}"
+                       href="?type=documentation">Documentation</a>
+                  </li>
+                </ul>
+              </div>
+              Type
+            </th>
+            <th>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        id="statusDropdown"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">{{ status_filter|default:"All" }}</button>
+                <ul class="dropdown-menu" aria-labelledby="statusDropdown">
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'all' %} active{% endif %}"
+                       href="?status=all">All</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'todo' %} active{% endif %}"
+                       href="?status=todo">To Do</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'in_progress' %} active{% endif %}"
+                       href="?status=in_progress">In Progress</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'under_review' %} active{% endif %}"
+                       href="?status=under_review">Under Review</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'done' %} active{% endif %}"
+                       href="?status=done">Done</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item{% if status_filter == 'all' %} active{% endif %}"
+                       href="?status=wont_fix">Won't Fix</a>
+                  </li>
+                </ul>
+              </div>
+              Status
+            </th>
             <th>Actions</th>
           </tr>
         </thead>
