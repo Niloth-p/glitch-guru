@@ -48,3 +48,10 @@ h5.card-title {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+#search-bar {
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}

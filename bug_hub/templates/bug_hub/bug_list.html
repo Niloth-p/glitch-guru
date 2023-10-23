@@ -2,7 +2,21 @@
 {% block content %}
   <div class="container">
     <h1>Bug Hub</h1>
-    <a href="{% url 'bug_hub:bug_create' %}" class="btn btn-primary mb-3">Create New Bug Report</a>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="{% url 'bug_hub:bug_create' %}" class="btn btn-primary mb-3">Create New Bug Report</a>
+      </div>
+      <div class="col-md-8 text-md-right">
+        <form method="get" class="form-inline">
+          <input type="text"
+                 name="q"
+                 placeholder="Search by title"
+                 class="form-control mr-2"
+                 id="search-bar">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </div>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>

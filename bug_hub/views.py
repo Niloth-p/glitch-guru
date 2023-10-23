@@ -33,8 +33,11 @@ class BugListView(ListView):
         queryset = super().get_queryset()
         status_filter = self.request.GET.get('status', 'all')  
         type_filter = self.request.GET.get('type', 'all')      
-        
-        if status_filter != 'all':
+        query = self.request.GET.get('q')
+
+        if query:
+            queryset = queryset.filter(title__icontains=query)
+        elif status_filter != 'all':
             queryset = queryset.filter(status=status_filter)
         elif type_filter != 'all':
             queryset = queryset.filter(bug_type=type_filter)
