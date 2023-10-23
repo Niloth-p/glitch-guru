@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="container">
-    <h1>Bug Detail</h1>
+    <h1>Bug Report: {{ bug.title }}</h1>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{ bug.title }}</h5>
         <p class="card-text">
           <strong>Type:</strong> {{ bug.get_bug_type_display }}
+        </p>
+        <p class="card-text">
+          <strong>Description:</strong>
         </p>
         <p class="card-text">{{ bug.description }}</p>
         <p class="card-text">

@@ -39,3 +39,12 @@ footer .row:last-child p {
     width: 100%;
   }
 }
+
+h5.card-title {
+  margin-bottom: 20px;
+}
+
+.container > h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
