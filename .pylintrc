@@ -1,0 +1,52 @@
+[MASTER]
+
+# Specify the maximum number of characters per line (default is 100).
+max-line-length = 120
+ignore = migrations
+
+[MESSAGES CONTROL]
+
+# Disable specific error messages or warning messages using message codes.
+# disable = C0114, C0115, C0116
+
+[BASIC]
+
+# Define additional names that should be considered valid function and method names.
+# additional-names = _
+
+[FORMAT]
+
+# Specify the output format. Options include "text," "colorized," "pylint," and more.
+output-format = colorized
+
+[REPORTS]
+
+# Generate a HTML report (you can specify the report output file).
+output = no
+
+[TYPECHECK]
+
+# Enable type checking using Python type hints (requires Python 3.5+ and type hinting).
+# This example enables type checking.
+load-plugins = pylint.checkers.typecheck
+
+[DESIGN]
+
+# Maximum number of attributes for a class (default is 7).
+max-attributes = 10
+
+[EXCEPTIONS]
+
+# Specify exceptions that should be ignored by pylint (comma-separated).
+ignored-classes = NotImplementedError, AssertionError
+
+[IMPORTS]
+
+# Specify modules that should be considered as part of the project's internal namespace.
+# These modules won't trigger import errors when using them within the project.
+# extension-pkg-whitelist = numpy, mymodule
+
+[LOGGING]
+
+# Enable logging of messages with logging messages and docstrings.
+# include-loggers = myapp.logger, myapp2.logger2
