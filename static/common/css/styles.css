@@ -56,3 +56,8 @@ h5.card-title {
   margin-bottom: 10px;
   display: inline-block;
 }
+
+a.fa-icon-link {
+  color: inherit;
+  text-decoration: none;
+}
