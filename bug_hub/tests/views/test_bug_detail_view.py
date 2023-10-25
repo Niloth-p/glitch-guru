@@ -11,14 +11,8 @@ class BugDetailViewTestCase(TestCase):
     """
     Test case for the BugDetailView class.
 
-    Attributes:
-        bug (Bug): A Bug object created for testing.
-        url (str): The URL for the bug detail view.
-
-    Methods:
-        setUp(): Set up the test environment by creating a test Bug object and initializing the URL.
-        test_bug_detail_view(): Test the bug detail view's response, template usage, and context data.
-
+    :param Bug bug: A Bug object created for testing.
+    :param str url: The URL for the bug detail view.
     """
 
     def setUp(self):

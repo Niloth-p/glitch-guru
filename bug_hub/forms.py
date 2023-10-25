@@ -14,15 +14,10 @@ class BugCreationForm(forms.ModelForm):
 
     This form is used for creating bug reports in the Glitch Guru Django project.
 
-    Attributes:
-        title (CharField): Name of the bug report.
-        description (CharField): A detailed description of the bug.
-        bug_type (ChoiceField): The type of bug, such as error, feature request, enhancement, documentation.
-        status (ChoiceField): The current status of the bug report 
-                (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
-
-    Methods:
-        clean_title(): Custom validation for ensuring that a bug report with the same title does not already exist.
+    :param CharField title: Name of the bug report.
+    :param CharField description: A detailed description of the bug.
+    :param ChoiceField bug_type: The type of bug, such as error, feature request, enhancement, documentation.
+    :param ChoiceField status: The current status of the bug report (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
     # pylint: disable=R0903
@@ -63,6 +58,7 @@ class BugCreationForm(forms.ModelForm):
     def clean_title(self):
         """
         Custom validation to check for duplicate bug titles.
+        For ensuring that a bug report with the same title does not already exist.
 
         Returns:
             str: The validated title if it's unique.

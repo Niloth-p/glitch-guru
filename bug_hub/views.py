@@ -12,12 +12,12 @@ class BugListView(ListView):
     """
     A view for displaying a paginated list of bug reports.
 
-    Attributes:
-        model (Bug): The model representing bug reports.
-        template_name (str): The path to the HTML template for rendering the bug list.
-        context_object_name (str): The name to use for the list of bug reports in the template context.
-        paginate_by (int): The number of bug reports to display per page.
-        ordering (list of str): The default ordering of bug reports in the list.
+    :param Bug model: The model representing bug reports.
+    :param str template_name: The path to the HTML template for rendering the bug list.
+    :param str context_object_name: The name to use for the list of bug reports in the template context.
+    :param int paginate_by: The number of bug reports to display per page.
+    :param list of str ordering: The default ordering of bug reports in the list.
+
     """
     model = Bug
     template_name = "bug_hub/bug_list.html"
@@ -63,10 +63,10 @@ class BugDetailView(DetailView):
     """
     A view for displaying the details of a single bug report.
 
-    Attributes:
-        model (Bug): The model representing bug reports.
-        template_name (str): The path to the HTML template for rendering the bug details.
-        context_object_name (str): The name to use for the bug report in the template context.
+    :param Bug model: The model representing bug reports.
+    :param str template_name: The path to the HTML template for rendering the bug details.
+    :param str context_object_name: The name to use for the bug report in the template context.
+
     """
     model = Bug
     template_name = "bug_hub/bug_detail.html"
@@ -78,14 +78,10 @@ class BugCreateView(CreateView):
 
     This view allows users to create and submit new bug reports.
 
-    Attributes:
-        model (Bug): The model representing bug reports.
-        form_class (BugCreationForm): The form class for creating bug reports.
-        template_name (str): The path to the HTML template for rendering the bug creation form.
-        success_url (str): The URL to redirect to after successfully creating a bug report.
-
-    Methods:
-        form_valid(form): Handles the form submission and sets the user who reported the bug.
+    :param Bug model: The model representing bug reports.
+    :param BugCreationForm form_class: The form class for creating bug reports.
+    :param str template_name: The path to the HTML template for rendering the bug creation form.
+    :param str success_url: The URL to redirect to after successfully creating a bug report.
     """
     model = Bug
     form_class = BugCreationForm

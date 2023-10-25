@@ -15,12 +15,6 @@ class BugListViewTestCase(TestCase):
 
     Attributes:
         url (str): The URL for the bug list view.
-
-    Methods:
-        setUp(): Set up the test environment by initializing the URL.
-        test_bug_list_view(): Test the bug list view's response and template usage.
-        test_bug_list_pagination(): Test pagination in the bug list view.
-
     """
 
     def setUp(self):

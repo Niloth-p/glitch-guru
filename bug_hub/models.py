@@ -20,15 +20,11 @@ class Bug(models.Model):
     This model represents various attributes related to bugs, including their description,
     type, reporting date, and status.
 
-    Attributes:
-        title (CharField): Name of the bug
-        description (TextField): A detailed description of the bug.
-        bug_type (CharField): The type of bug, such as error, feature request, enhancement, documentation
-        report_date (DateTimeField): The date when the bug was reported. User cannot set it. Only auto-generated.
-        status (CharField): The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
-
-    Methods:
-        __str__(): Returns a string representation of the bug.
+    :param CharField title: Name of the bug.
+    :param TextField description: A detailed description of the bug.
+    :param CharField bug_type: The type of bug, such as error, feature request, enhancement, documentation.
+    :param DateTimeField report_date: The date when the bug was reported. User cannot set it. Only auto-generated.
+    :param CharField status: The current status of the bug (e.g., To Do, In Progress, Done, Under Review, Won't Fix).
     """
 
     title = models.CharField(
@@ -74,15 +70,15 @@ class Bug(models.Model):
     )
 
     def __str__(self):
+        """Returns a string representation of the bug."""
         return str(object=self.title)
 
     # pylint: disable=R0903
     class Meta:
         """
-        Meta Attributes:
-            verbose_name (str): A human-readable singular name for the model.
-            verbose_name_plural (str): A human-readable plural name for the model.
-            ordering (list of str): The default ordering of records in the database.
+        :param str verbose_name: A human-readable singular name for the model.
+        :param str verbose_name_plural: A human-readable plural name for the model.
+        :param list of str ordering: The default ordering of records in the database.
         """
 
         verbose_name = "Bug"
