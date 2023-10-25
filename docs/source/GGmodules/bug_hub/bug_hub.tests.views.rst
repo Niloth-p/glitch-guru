@@ -1,8 +1,8 @@
 bug\_hub.tests.views package
 ============================
 
-Submodules
-----------
+bug\_hub.tests.views Submodules
+-------------------------------
 
 bug\_hub.tests.views.test\_bug\_create\_view module
 ---------------------------------------------------
@@ -28,10 +28,3 @@ bug\_hub.tests.views.test\_bug\_list\_view module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: bug_hub.tests.views
-   :members:
-   :undoc-members:
-   :show-inheritance:

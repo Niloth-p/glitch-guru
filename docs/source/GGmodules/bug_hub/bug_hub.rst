@@ -1,17 +1,16 @@
 bug\_hub package
 ================
 
-Subpackages
------------
+bug\_hub Subpackages
+---------------------
 
 .. toctree::
    :maxdepth: 4
 
-   bug_hub.migrations
    bug_hub.tests
 
-Submodules
-----------
+bug\_hub Submodules
+--------------------
 
 bug\_hub.admin module
 ---------------------
