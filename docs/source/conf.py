@@ -16,6 +16,8 @@ release = "1.0.0"
 
 sys.path.insert(0, os.path.abspath("../.."))
 os.environ["DJANGO_SETTINGS_MODULE"] = "GlitchGuru.settings"
+import django
+django.setup()
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
