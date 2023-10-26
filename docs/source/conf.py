@@ -32,15 +32,12 @@ extensions = [
                 'sphinx-prompt',
                 'sphinx_favicon',
                 'sphinx.ext.napoleon',
+                'sphinx_toolbox.shields',
               ]
 
 templates_path = ["_templates"]
 exclude_patterns = ['**/migrations/*']
 master_doc = 'index'
-# html_sidebars = {
-#     '**': ['custom_sidebar.html', 'localtoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'],
-# }
-# github_url = URL to Docs on GitHub
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -53,3 +50,6 @@ html_css_files = [
 ]
 html_js_files = [
 ]
+
+github_username = 'Niloth-p'
+github_repository = 'glitch-guru'
