@@ -1,0 +1,7 @@
+.rst-content section h3 a.toc-backref {
+  color: green;
+}
+
+.rst-content section h2 a.toc-backref {
+  color: blue;
+}
