@@ -35,12 +35,21 @@ extensions = [
               ]
 
 templates_path = ["_templates"]
-exclude_patterns = []
-html_favicon = '_static/Wmf-ico-48px.png'
-
+exclude_patterns = ['**/migrations/*']
+master_doc = 'index'
+# html_sidebars = {
+#     '**': ['custom_sidebar.html', 'localtoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'],
+# }
+# github_url = URL to Docs on GitHub
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+html_favicon = '_static/Wmf-ico-48px.png'
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
+html_css_files = [
+    'css/custom.css',
+]
+html_js_files = [
+]
