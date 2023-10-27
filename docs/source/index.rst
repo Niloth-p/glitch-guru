@@ -6,11 +6,7 @@
 Welcome to GlitchGuruDocs's documentation!
 ==========================================
 
-|Build and Test| |CodeFactor| |CodeCov| |PyLint| |Sphinx Coverage| |GitHub code size in bytes| |Last Commit| |Maintenance| |PR Welcome| |License: GPL v3|
-
-.. .. rtfd-shield::
-..    :project: The name of the project on ReadTheDocs.
-
+|Build and Test| |CodeFactor| |CodeCov| |PyLint| |Sphinx Coverage| |GitHub code size in bytes| |Last Commit| |Maintenance| |PR Welcome| |License: GPL v3| |ReadTheDocs Build Status|
 
 Glitch Guru: Introduction
 --------------------------
@@ -21,18 +17,7 @@ A simple alternative to complex bug management tools!
 
 Glitch Guru offers a centralized platform to seamlessly report, categorize, track and address bugs and feature requests to achieve project perfection.
 
-
-.. container:: mainlinks
-   :name: GGmainlinks
-   
-   .. raw:: html
-
-      <a href="https://niloth.pythonanywhere.com/" style="background-color: #0074d9; color: #fff; padding: 10px 20px; margin:20px; text-decoration: none; border-radius: 5px;">Visit Glitch Guru</a>
-      <a href="https://github.com/Niloth-p/glitch-guru/" style="background-color: green; color: #fff; padding: 10px 20px; margin:20px; text-decoration: none; border-radius: 5px;">View the code repo</a>
-      <a href="#" style="background-color: brown; color: #fff; padding: 10px 20px; margin:20px; text-decoration: none; border-radius: 5px;">View the documentation</a>
-
-
-|GitHub repo| |Read The Docs Documentation| |BuyMeACoffee|
+|VisitGlitchGuru| |Viewthecoderepo| |BuyMeACoffee|
 
 .. comment
 
@@ -81,6 +66,11 @@ Feel free to provide feedback or contribute to this documentation by following o
    :target: https://github.com/Niloth-p/glitch-guru/
 .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
    :target: https://www.gnu.org/licenses/gpl-3.0
-
+.. |ReadTheDocs Build Status| image:: https://readthedocs.org/projects/glitch-guru/badge/?version=latest&style=plastic
+   :target: https://glitch-guru.readthedocs.io/en/latest/index.html
 .. |BuyMeACoffee| image:: https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black
    :target: #
+.. |VisitGlitchGuru| image:: https://img.shields.io/badge/Visit%20Glitch%20Guru-0C22FF?style=for-the-badge
+   :target: https://niloth.pythonanywhere.com/
+.. |Viewthecoderepo| image:: https://img.shields.io/badge/View%20the%20code%20repo-03920E?style=for-the-badge
+   :target: https://github.com/Niloth-p/glitch-guru/
