@@ -1,3 +1,5 @@
+.. _FeaturesAll:
+
 Features
 ------------------------------
 
@@ -25,3 +27,5 @@ Functionality
 
 
 Feel free to provide feedback or contribute to this documentation by following our contribution guidelines.
+
+:ref:`Back to Top <FeaturesAll>`

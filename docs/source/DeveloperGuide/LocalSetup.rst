@@ -130,3 +130,5 @@ Making Contributions
 You are now set up to contribute to the Glitch Guru project.
 
 For more detailed information on contributing and advanced configurations, refer to the project's README and contribution guidelines.
+
+:ref:`Back to Top <LocalSetup>`

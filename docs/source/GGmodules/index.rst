@@ -1,3 +1,5 @@
+.. _CodeDocs:
+
 Code Documentation
 --------------------
 
@@ -7,3 +9,4 @@ Code Documentation
    GlitchGuru/GlitchGuru
    bug_hub/bug_hub
 
+:ref:`Back to Top <CodeDocs>`
