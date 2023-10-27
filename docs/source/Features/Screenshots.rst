@@ -8,13 +8,13 @@ Screenshots
 Dark Theme - Create View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/dark/create/iPhone_12_Pro.png
+.. figure:: ../_static/images/screenshots/dark/create/iPhone_12_Pro.png
    :alt: iPhone 12 Pro
    :scale: 50%
 
    Create view in iPhone 12 Pro with dark theme
 
-.. figure:: ../_static/images/Screenshots/dark/create/Nest_Hub_Max.png
+.. figure:: ../_static/images/screenshots/dark/create/Nest_Hub_Max.png
    :alt: Nest Hub Max
    :scale: 50%
 
@@ -25,13 +25,13 @@ Dark Theme - Create View
 Dark Theme - Detail View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/dark/detail/Nest_Hub.png
+.. figure:: ../_static/images/screenshots/dark/detail/Nest_Hub.png
    :alt: Nest Hub
    :scale: 50%
 
    Detail view in Nest Hub with dark theme
 
-.. figure:: ../_static/images/Screenshots/dark/detail/Surface_Duo.png
+.. figure:: ../_static/images/screenshots/dark/detail/Surface_Duo.png
    :alt: Surface Duo
    :scale: 50%
 
@@ -42,20 +42,20 @@ Dark Theme - Detail View
 Dark Theme - Home View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/dark/home/Nest_Hub.png
+.. figure:: ../_static/images/screenshots/dark/home/Nest_Hub.png
    :alt: Nest Hub
    :scale: 50%
 
    Home view in Nest Hub with dark theme
 
-.. figure:: ../_static/images/Screenshots/dark/home/Surface_Duo.png
+.. figure:: ../_static/images/screenshots/dark/home/Surface_Duo.png
    :alt: Surface Duo
    :scale: 50%
    :align: right
 
    Home view in Surface Duo with dark theme
 
-.. figure:: ../_static/images/Screenshots/dark/home/Pixel_5.png
+.. figure:: ../_static/images/screenshots/dark/home/Pixel_5.png
    :alt: Pixel 5
    :scale: 50%
 
@@ -66,13 +66,13 @@ Dark Theme - Home View
 Dark Theme - List View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/dark/list/iPhone_12_Pro.png
+.. figure:: ../_static/images/screenshots/dark/list/iPhone_12_Pro.png
    :alt: iPhone 12 Pro
    :scale: 50%
 
    List view in iPhone 12 Pro with dark theme
 
-.. figure:: ../_static/images/Screenshots/dark/list/Surface_Pro_7.png
+.. figure:: ../_static/images/screenshots/dark/list/Surface_Pro_7.png
    :alt: Surface Pro 7
    :scale: 50%
 
@@ -83,20 +83,20 @@ Dark Theme - List View
 Light Theme - Create View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/light/create/Surface_Duo_Create.png
+.. figure:: ../_static/images/screenshots/light/create/Surface_Duo_Create.png
    :alt: Surface Duo Create
    :scale: 50%
    :align: right
 
    Create view in Surface Duo Create with light theme
 
-.. figure:: ../_static/images/Screenshots/light/create/iPhone_12_Pro.png
+.. figure:: ../_static/images/screenshots/light/create/iPhone_12_Pro.png
    :alt: iPhone 12 Pro
    :scale: 50%
 
    Create view in iPhone 12 Pro with light theme
 
-.. figure:: ../_static/images/Screenshots/light/create/Nest_Hub_Max.png
+.. figure:: ../_static/images/screenshots/light/create/Nest_Hub_Max.png
    :alt: Nest Hub Max
    :scale: 50%
 
@@ -107,20 +107,20 @@ Light Theme - Create View
 Light Theme - Detail View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/light/detail/Nest_Hub.png
+.. figure:: ../_static/images/screenshots/light/detail/Nest_Hub.png
    :alt: Nest Hub
    :scale: 50%
 
    Detail view in Nest Hub with light theme
 
-.. figure:: ../_static/images/Screenshots/light/detail/Surface_Duo.png
+.. figure:: ../_static/images/screenshots/light/detail/Surface_Duo.png
    :alt: Surface Duo
    :scale: 50%
    :align: right
 
    Detail view in Surface Duo with light theme
 
-.. figure:: ../_static/images/Screenshots/light/detail/Pixel_5.png
+.. figure:: ../_static/images/screenshots/light/detail/Pixel_5.png
    :alt: Pixel 5
    :scale: 50%
 
@@ -131,20 +131,20 @@ Light Theme - Detail View
 Light Theme - Home View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/light/home/Nest_Hub.png
+.. figure:: ../_static/images/screenshots/light/home/Nest_Hub.png
    :alt: Nest Hub
    :scale: 50%
 
    Home view in Nest Hub with light theme
 
-.. figure:: ../_static/images/Screenshots/light/home/Pixel_5.png
+.. figure:: ../_static/images/screenshots/light/home/Pixel_5.png
    :alt: Pixel 5
    :scale: 50%
    :align: right
 
    Home view in Pixel 5 with light theme
 
-.. figure:: ../_static/images/Screenshots/light/home/Surface_Duo.png
+.. figure:: ../_static/images/screenshots/light/home/Surface_Duo.png
    :alt: Surface Duo
    :scale: 50%
 
@@ -155,13 +155,13 @@ Light Theme - Home View
 Light Theme - List View
 ==========================
 
-.. figure:: ../_static/images/Screenshots/light/list/iPhone_12_Pro.png
+.. figure:: ../_static/images/screenshots/light/list/iPhone_12_Pro.png
    :alt: iPhone 12 Pro
    :scale: 50%
 
    List view in iPhone 12 Pro with light theme
 
-.. figure:: ../_static/images/Screenshots/light/list/Surface_Pro_7.png
+.. figure:: ../_static/images/screenshots/light/list/Surface_Pro_7.png
    :alt: Surface Pro 7
    :scale: 50%
 
