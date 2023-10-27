@@ -61,6 +61,20 @@ Documentation
 
       make html
 
+5. **Live Server:**
+
+   .. code-block:: bash
+      
+      sphinx-autobuild <source directory> <directory to generate output in>
+   
+   Example: 
+   
+   .. code-block:: bash
+   
+      sphinx-autobuild docs/source docs/_build/html
+
+   Then, access http://127.0.0.1:8000/ with your browser.
+
 Feel free to provide feedback or contribute to this documentation by following our contribution guidelines.
 
 :ref:`Back to Top <Commands>`
