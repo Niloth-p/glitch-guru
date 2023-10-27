@@ -4,7 +4,7 @@ Choice Sets for Bug Types and Statuses
 This module fixes predefined options for specifying bug types and statuses used in the Bug model.
 
 Choice Sets:
-***********
+*************
 
 - `BUG_TYPE_CHOICES` (list of tuple): Choice set for bug types.
     - "error": Error
