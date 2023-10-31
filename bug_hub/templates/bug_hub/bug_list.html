@@ -106,8 +106,9 @@
               <td>{{ bug.get_bug_type_display }}</td>
               <td>{{ bug.get_status_display }}</td>
               <td>
-                <a href="{% url 'bug_hub:bug_detail' bug.pk %}"
-                   class="btn btn-info btn-sm">View</a>
+                <a href="{% url 'bug_hub:bug_detail' bug.pk %}">
+                <i class="fa-regular fa-eye"></i>
+              </a>
               </td>
             </tr>
           {% empty %}
