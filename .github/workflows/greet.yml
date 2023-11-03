@@ -1,0 +1,20 @@
+name: Greeting new contributors
+
+on:
+  pull_request_target:
+  issues:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "🎯 You're officially part of the team! Your first issue has been opened. Exciting times ahead!"
+          pr-message: "👏 Bravo! Your first PR is soaring high 🚀. Together, we'll shape the future of this project."
