@@ -88,7 +88,7 @@ Embark on your contributing journey with our step-by-step guide. [📝 Follow Se
 
 ## Project Objectives
 
-What makes Glitch Guru special? [Learn here](documentation/TheGlitchGuruProject/Objectives.html)
+What makes Glitch Guru special? [Learn here](https://glitch-guru.readthedocs.io/en/latest/TheGlitchGuruProject/Objectives.html#key-objectives)
 
 ## Directory Tree
 
