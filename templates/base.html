@@ -17,7 +17,36 @@
     <link rel="stylesheet" href="{% static 'common/css/styles.css' %}" />
     <script>
       function handleLoadingError(libname) {
-        alert(`Error loading ${libname}. Please try again later.`);
+        let message = `Error loading ${libname}. `;
+        switch(libname) {
+          case 'bootstrap css':
+            message += "This may affect the visual layout and styling of the page. ";
+            message += "Bootstrap is a widely used library for responsive design, so its failure to load could be due to network issues or CDN problems. ";
+            break;
+          case 'jquery':
+            message += "Interactive features and some dynamic content might not work properly. ";
+            message += "jQuery is a common JavaScript library, and its failure to load could be due to a network or CDN issue. ";
+            break;
+          case 'popper':
+            message += "Some pop-up elements or tooltips might not display correctly. ";
+            message += "Popper.js is crucial for positioning elements, and its failure to load might be a network-related issue. ";
+            break;
+          case 'bootstrap js':
+            message += "Certain interactive components like modals, dropdowns may not function. ";
+            message += "This is often due to network or CDN issues. ";
+            break;
+          case 'fontawesome js':
+            message += "Icons and some graphical elements may not appear as intended. ";
+            message += "FontAwesome is a library for icons, and loading issues are typically related to network or CDN problems. ";
+            break;
+          default:
+            message += "Some features may not work as expected. ";
+            break;
+        }
+    
+    message += "If the problem persists, please check your internet connection or try accessing the site from a different browser.";
+    alert(message);
+
       }
     </script>
     <link rel="stylesheet"
