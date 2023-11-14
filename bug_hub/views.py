@@ -25,6 +25,15 @@ class BugListView(ListView):
     paginate_by = PAGINATE_BY
     ordering = ["-report_date"]
 
+    def __init__(self, **kwargs):
+        """
+        Initializes a new instance of the class.
+        """
+        super().__init__(**kwargs)
+        self.status_filter = None
+        self.type_filter = None
+        self.query = None
+
     def get_queryset(self):
         """
         Returns a queryset object containing the filtered results
