@@ -53,6 +53,7 @@ class BugListView(ListView):
 
         self.status_filter = status_filter
         self.type_filter = type_filter
+        self.query = query
 
         return queryset
 
@@ -66,6 +67,7 @@ class BugListView(ListView):
         context = super().get_context_data(**kwargs)
         context['status_filter'] = self.status_filter
         context['type_filter'] = self.type_filter
+        context['query'] = self.query
         return context
 
 class BugDetailView(DetailView):

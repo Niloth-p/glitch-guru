@@ -12,7 +12,8 @@
                  name="q"
                  placeholder="Search by title"
                  class="form-control mr-2"
-                 id="search-bar">
+                 id="search-bar"
+                 value="{% if query %}{{ query }}{% endif %}">
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </div>
