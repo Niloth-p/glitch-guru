@@ -7,6 +7,7 @@ from django.http import HttpResponseServerError
 from bug_hub.models import Bug
 from config.constants import PAGINATE_BY
 from .forms import BugCreationForm
+from .choices import BUG_TYPE_CHOICES, STATUS_CHOICES
 
 class BugListView(ListView):
     """
@@ -55,8 +56,9 @@ class BugListView(ListView):
         :return: The context data with additional filters.
         """
         context = super().get_context_data(**kwargs)
-        context['status_filter'] = self.status_filter
-        context['type_filter'] = self.type_filter
+        context['status_filter'] = STATUS_CHOICES.get(self.status_filter, 'All')
+        context['type_filter'] = BUG_TYPE_CHOICES.get(self.type_filter, 'All')
+        context['query'] = self.query
         return context
 
 class BugDetailView(DetailView):
