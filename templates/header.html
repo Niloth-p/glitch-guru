@@ -1,27 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: flex; align-items: center;">
+  <div class="container" style="flex-grow: 1; display: flex; justify-content: space-between; align-items: center;">
     <button class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation" 
+            style="border: none; background: none;">
       <i class="fas fa-bars"></i>
     </button>
-    <a class="navbar-brand" href="{% url 'home' %}">
+    <a class="navbar-brand" href="{% url 'home' %}" style="margin-right: auto;">
       <span class="emphasized-name">{{ PRODUCT_NAME }}</span>: Bug Tracker
     </a>
-    <button class="btn btn-light ml-auto order-md-1" id="darkModeToggle">
+    <button class="btn btn-light ml-auto order-md-1" id="darkModeToggle" style="margin-left: auto;">
       <i id="themeIcon" class="fas fa-moon"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" style="flex-basis: auto;">
       <ul class="navbar-nav ml-auto order-md-2">
         <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+          <a class="nav-link text-white" href="{% url 'home' %}" style="white-space: nowrap;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'bug_hub:bug_list' %}">Bugs</a>
+          <a class="nav-link text-white" href="{% url 'bug_hub:bug_list' %}" style="white-space: nowrap;">Bugs</a>
         </li>
       </ul>
     </div>
